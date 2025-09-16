@@ -1,0 +1,143 @@
+Q1.Explain the difference between var, let, and const. Provide examples of scope differences.
+ans.    var,let and const are js variables.
+        1. var-> var has global scope meaning we can access variables declared with var keyword anywhere in code.
+                we can redeclare,reassign using var.
+                hoisting is possible when we use var.
+        2.let-> "let" introduced in ES6. 
+                let keyword has block scope meaning we cannot access varibles declared with let keyword outside that scope.
+                we can reassign but cannot redeclare values using let.
+                hoisting is not possible.
+        3.const-> "const" is also introduced in ES6.
+                    It is used for constant values to avoid errors.
+                    const has block scope meaning we cannot access variables declared with const keyword outside that scope.
+                    we cannot reassign and redeclare values using let.
+                    hoisting is not possible.
+
+Q2. Explain hoisting with an example for both functions and variables.
+ans.     hoisting means moving variables and functions at top of their scope.
+        ex. function
+
+            greet();
+            function greet(){
+                return "hello word"
+            }
+
+        ex. variable
+
+            console.log(a);
+            let a=10;
+
+Q3.What are closures? Write a simple function demonstrating closure.
+ans. closure happens when inner function remember the values from its outer scope.(lexical scope);
+    ex. 
+        function closureExample(){
+            let a=4;
+            function inner(num){
+                 for(let i=0;i<=num;i++){
+                console.log(a);
+            }
+            }
+            inner(5)
+           
+        }
+        closureExample();
+
+Q4.What is event delegation in JavaScript? Why is it useful?
+ans. Event delegation is a technique in JavaScript where a single event listener is attached to a parent element to handle events for its child elements.
+
+    why it is useful:
+    Reduces the number of event listeners, making the code more efficient.
+    Easier to manage and maintain event handling logic.
+
+Q5. How does the this keyword work in different contexts (global, object, class, arrow function)?
+ans.Global Context:
+        In the global scope, this refers to the global object (usually window in browsers).
+    Object Context:
+        When used within an object method, this refers to the object itself.
+    Class Context:
+        In a class, this refers to the instance of the class.
+    Arrow Function Context:
+        Arrow functions inherit this from their surrounding scope, rather than binding it to their own context.
+
+Q6.What is the difference between == and === in JavaScript? Why is one preferred over the other?
+ans. In JS == and === are used to compare values.
+    == campares only values.
+    === is introduced in ES6 which compares not only value but data type also.
+    It hepls to prevent errors.
+    always preferred === because it check both value and datatype. If we intentionally want to check only values at that time we can use ==. otherwise === is useful for safety purpose.
+
+Q7. Explain the call(), apply(), and bind() methods with examples.
+ans. The call(), apply(), and bind() methods in JavaScript are used to manipulate the this context and function arguments.
+
+    call() Method:
+    The call() method calls a function with a given this context and individual arguments.
+    ex.
+        function greet(age, city) {
+        console.log(`Hello, my name is ${this.name} and I am ${age} years old from ${city}.`);
+        }
+        const person = { name: 'awdiz' };
+        greet.call(person, 30, 'vashi');
+    
+    apply() Method:
+    The apply() method calls a function with a given this context and an array of arguments.
+
+        function greet(age, city) {
+        console.log(`Hello, my name is ${this.name} and I am ${age} years old from ${city}.`);
+        }
+        const person = { name: 'awdiz' };
+        const args = [30, 'vashi'];
+        greet.apply(person, args);
+
+    bind() Method:
+    The bind() method creates a new function with a given this context and returns it.
+
+        function greet(age, city) {
+        console.log(`Hello, my name is ${this.name} and I am ${age} years old from ${city}.`);
+        }
+        const person = { name: 'awdiz' };
+        const boundGreet = greet.bind(person, 30);
+        boundGreet('vashi');
+
+Q8. What are Promises and async/await? Show how to handle errors properly in both.
+ans. Promises and async/await are used to handle asynchronous code.
+    const promise = new Promise((resolve, reject) => {
+   
+        if ( success ) {
+            resolve(value);
+        } else {
+            reject(error);
+        }
+    });
+    Handling Promises:
+    promise
+        .then((value) => {
+            // handle success
+        })
+        .catch((error) => {
+            // handle error
+    });
+
+    async/await:
+    async function asyncFunction() {
+    try {
+        const value = await (asynchronous call);
+        // handle success
+    } catch (error) {
+        // handle error
+    }
+    }
+
+Q9.What is event loop in JavaScript? Explain the difference between microtasks and macrotasks with an example.
+ans. The event loop is a single-threaded mechanism that processes tasks (or events) in a queue. It continuously checks the queue for new tasks and executes them one by one
+
+
+
+
+
+
+
+
+
+
+
+
