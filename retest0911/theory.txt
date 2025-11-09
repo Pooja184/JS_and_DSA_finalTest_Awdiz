@@ -1,0 +1,110 @@
+Q1. What is a 2D array in JavaScript? How can you create one?
+->> 2D array stands for 2 dimentional array. 2D array means the array which contain other arrays as its elements.
+[
+    [1,2,3],
+    [4,5,6]
+]
+
+Q2.  How do you access elements in a 2D array?
+->> we can access elements in array using 
+    arrName[rowIdx][ColIdx]
+
+Q3. What are arrays of objects used for in JavaScript?
+--> array of objects means we write objects inside array. it is used to store collection of data that have multiple properties and attributes.
+
+Q4.How can you find an object in an array based on a specific property value?
+-->we can use loops or differents functions like find or filter
+Loop syntax for(let i=0;i<=arr.length;i++){
+    if(arr[i].idx==1){
+        return arr[i];
+    }
+}
+
+Q5.What is the difference between for...of and for...in loops?
+-->both are used to iterate over the collections. for of iterate over values and for in iterate over keys;
+
+Q6. How can you add a new property to an existing object?
+--> we can add new property in object using obj.propertyName="value"
+
+Q7. What does the map() function do in JavaScript?
+-->map method creates a new array with the results of applying a provided function to every element in the calling array.
+it doesn't changed original array 
+
+Q8. What is the purpose of the filter() function?
+--> The purpose of filter method is provide the result which passes specific condition
+it doesn't changed original array 
+
+Q9.How is the reduce() method different from map() and filter()?
+--> reduce method check all element and provide one value as an output whereas map and filter method provide multiple outputs. 
+one thing is common in three is they don't changed original array;
+
+Q10. What is JSON and how is it related to JavaScript objects?
+--> JSON stands for JavaScript object notation it stores data in object like format but in object we add only values in strings but in json we add both keys and values in string. 
+json data look likes= {
+                         "Awdiz":"vashi"
+                     }
+ object data look likes=  {
+                         Awdiz:"vashi"
+                     }                  
+
+Q11. How do you find the length of a string in JavaScript?
+--> we can find the length of string in js using JavaScript length method.
+    syntax= str.length
+
+Q12. What is the difference between slice(), substring(), and substr()?
+--> in slice method we've to pass values and based on that values it return string
+    for ex. str="awdiz"
+            str.slice(0,3);
+            output= awd
+   
+    substr() is deprecated 
+
+Q13. How can you convert a string to an array?
+--> we can convert string into array using split method. 
+    split method converts string elements into array elements;
+    like str="vashi"
+        str.split();
+        output=[v,a,s,h,i]
+    
+Q14. What does toUpperCase() and toLowerCase() do?
+--> toUpperCase() is a string method which converts string into upper case letters
+    toLowerCase() is a string method which converts string into lower case letters
+
+Q15. Explain the concept of flags in problem-solving (e.g., using a variable to check if a
+condition is met).
+-->flags are the boolean values use to control the flow of the program.
+let isFound=true;
+
+Q16. How can a flag variable help control loops or condition checks?
+-->A flag variable can be used to skip certain iterations in a loop.
+    let found = false;
+    for (let i = 0; i < 10; i++) {
+    if (i === 5) {
+        found = true;
+        break;
+    }
+    }
+
+Q17. What is template literal and how is it useful for string formatting?
+--> template literals are introduced in ES6 . with the help of template literals we can add dynamic values in our string.
+ to use it we need to use ${" " } this syntax
+
+Q18. How can you remove whitespace from the beginning and end of a string?
+--> we can remove whitespace from the string using trim() method. trim() method remove all spaces from string from beginning to end;  
+ syntax= str="heyy pooja"
+        str.trim();
+        output=heyypooja
+    
+Q19.Explain how to loop through an array of objects to display a particular property.
+--> 
+const users = [
+  { id: 1, name: 'pooja', age: 21 },
+  { id: 2, name: 'poonam', age: 22 },
+  { id: 3, name: 'tanvi', age: 21 }
+];
+
+for (let i = 0; i < users.length; i++) {
+  console.log(users[i].name);
+}
+
+
